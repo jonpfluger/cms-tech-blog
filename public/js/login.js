@@ -15,9 +15,33 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/dashboardRoutes');
     } else {
       alert('Failed to log in');
+    }
+  }
+};
+
+const signUpFormHandler = async (event) => {
+  event.preventDefault();
+
+  // Gather the data from the form elements on the page
+  const username = document.querySelector('#username-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (username && email && password) {
+    // Send the e-mail and password to the server
+    const response = await fetch('/api/users/', {
+      method: 'POST',
+      body: JSON.stringify({ username, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/dashboardRoutes');
+    } else {
+      alert('Failed to create user');
     }
   }
 };
@@ -25,3 +49,7 @@ const loginFormHandler = async (event) => {
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signUpFormHandler);
