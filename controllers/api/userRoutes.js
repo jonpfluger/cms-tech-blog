@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
       req.session.username = newUser.username
       req.session.email = newUser.email
       req.session.password = newUser.password
-      req.session.loggedIn = true
+      req.session.logged_in = true
 
       res.json(newUser)
     })

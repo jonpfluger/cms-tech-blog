@@ -1,1 +1,24 @@
-<h2>This is the new post partial.</h2>
+<div class="pt-4">
+    <div id="createPost" class="card my-3">
+        <div id="createHeader" class="card-header d-flex justify-content-between align-items-center">
+            <h2>Create Post</h2>
+        </div>
+        <div id="createBody" class="card-body text-center w-100 m-auto px-2 py-auto">
+            <form id="createPost" class="form post-form">
+                <div class="form-group mb-3 mx-2 text-start text-light">
+                    <label for="reviewTitle" class="form-label">Post Title</label>
+                    <input class="form-control" type="text" id="reviewTitle" name="reviewTitle"/>
+                </div>
+                <div class="form-group mb-3 mx-2 text-start text-light">
+                    <label for="body" class="form-label">Content</label>
+                    <textarea id="body" type="text" class="form-control" name="body"></textarea>
+                </div>
+                <div class="col-12 my-1 text-center">
+                <button type="submit" class="btn btn-primary col-sm-2">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+ <script src="/js/newPost.js"></script>
