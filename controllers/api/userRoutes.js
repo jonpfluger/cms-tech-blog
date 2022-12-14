@@ -16,6 +16,8 @@ router.post('/', async (req, res) => {
       req.session.password = newUser.password
       req.session.logged_in = true
 
+      console.log(newUser)
+
       res.json(newUser)
     })
   } catch(err) {
@@ -47,7 +49,7 @@ router.post('/login', async (req, res) => {
 
     // Create session variables based on the logged in user
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.userId = userData.id;
       req.session.email = userData.email;
       req.session.logged_in = true;
       

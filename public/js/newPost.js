@@ -14,8 +14,7 @@ const newPostHandler = async (event) => {
       });
   
       if (response.ok) {
-        // document.location.replace('/dashboardRoutes');
-        console.log('test')
+        document.location.replace('/')
       } else {
         alert('Failed to log in');
       }

@@ -12,7 +12,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Tech Blog</a>
+      <a class="navbar-brand" href="/">Tech Blog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,9 +21,19 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/dashboardRoutes">Dashboard</a>
-          </li>
+
+          {{#if logged_in}}
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/dashboardRoutes">Dashboard</a>
+            </li>
+          {{/if}}
+
+          {{#if logged_in}}
+            <li class="nav-item">
+              <a class="nav-link" href="/create" id="newPost">New Post</a>
+            </li>
+          {{/if}}
+
           <li class="nav-item">
             {{#if logged_in}}
             <a class="nav-link" href="/login" id="logout">Log out</a>

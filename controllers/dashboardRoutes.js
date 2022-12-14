@@ -12,8 +12,6 @@ router.get('/', withAuth, async (req, res) => {
     }
 })
 
-// create routes that render handlebars partials for creating a new post, editing a post, require withAuth
-
 router.get('/create', withAuth, async (req, res) => {
     try {
         res.render('newPost', {

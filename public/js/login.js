@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboardRoutes');
+      document.location.replace('/create');
     } else {
       alert('Failed to log in');
     }
@@ -39,7 +39,7 @@ const signUpFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboardRoutes');
+      document.location.replace('/create');
     } else {
       alert('Failed to create user');
     }
