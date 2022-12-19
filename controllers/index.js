@@ -3,7 +3,7 @@ const apiRoutes = require('./api')
 const viewRoutes = require('./viewRoutes')
 const dashboardRoutes = require('./dashboardRoutes')
 
-router.use('/dashboardRoutes', dashboardRoutes)
+router.use('/dashboard', dashboardRoutes)
 router.use('/api', apiRoutes)
 router.use(viewRoutes)
 

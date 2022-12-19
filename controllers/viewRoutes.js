@@ -2,6 +2,7 @@ const router = require('express').Router()
 const {User, Blog, Comment} = require('../models')
 const withAuth = require('../utils/auth')
 
+// homepage
 router.get('/', async (req, res) => {
     try {
         let blogs = await Blog.findAll({
@@ -17,6 +18,7 @@ router.get('/', async (req, res) => {
     }
 })
 
+// login
 router.get('/login', async (req, res) => {
     try {
         res.render('login')
@@ -44,5 +46,30 @@ router.get('/create', withAuth, async (req, res) => {
         res.status(500).json(err)
     }
 })
+
+// dashboard
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+      let blogs = await Blog.findAll({
+        where: {
+          user_id: req.session.user_id
+        },
+        include: [User],
+        order: [['date_created', 'DESC']]
+      })
+      blogs = blogs.map(blog => {
+        return {
+          ...blog.get({ plain: true }),
+          logged_in: req.session.logged_in
+        }
+      })
+      res.render('dashboard', {
+        blogs,
+        logged_in: req.session.logged_in,
+      })
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  });
 
 module.exports = router
