@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             include: [User]
         })
         blogs = blogs.map(blog => blog.get({plain: true}))
-        console.log(blogs)
+
         res.render('homepage', {
             blogs,
             logged_in: req.session.logged_in
@@ -37,9 +37,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
             },
             include: User
         })
-        console.log(req.session.userId)
+
         blogs = blogs.map(blog => blog.get({plain: true}))
-        console.log(blogs)
+
         res.render('dashboard', {
             blogs,
             url: req.originalUrl,
@@ -58,7 +58,9 @@ router.get('/create', withAuth, async (req, res) => {
                 id: req.session.userId
             }
         })
+
         user = user.get({plain: true})
+        
         res.render('newPost', {
             user,
             url: req.originalUrl,

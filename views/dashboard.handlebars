@@ -1,14 +1,19 @@
 <h2>Your Posts</h2>
 
-{{#each blogs}}
-<div class="card my-5 border-dark">
-  <div class="card-header bg-success">
-    <h4>{{title}}</h4>
-    <p>Posted by {{user.username}} on {{date_created}}</p>
-  </div>
-  <div class="card-body bg-warning">
-    <p>{{content}}</p>
-  </div>
+<div id='dashboard'>
+  {{#each blogs}}
+    <div class="card my-5 border-dark">
+      <div class="card-header bg-success">
+        <h4>{{title}}</h4>
+        <p>Posted by {{user.username}} on {{date_created}}</p>
+      </div>
+      <div class="card-body bg-warning">
+        <p>{{content}}</p>
+        <a class="text-decoration-none text-reset" href="/edit/{{id}}">✎</a>
+        <button class="border-0 bg-transparent" id="delete" data-blogid="{{id}}">❌</button>
+      </div>
+    </div>
+  {{/each}}
 </div>
-{{/each}}
 
+<script src="/js/deletePost.js"></script>
