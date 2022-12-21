@@ -1,0 +1,14 @@
+<h2>Your Posts</h2>
+
+{{#each blogs}}
+<div class="card my-5 border-dark">
+  <div class="card-header bg-success">
+    <h4>{{title}}</h4>
+    <p>Posted by {{user.username}} on {{date_created}}</p>
+  </div>
+  <div class="card-body bg-warning">
+    <p>{{content}}</p>
+  </div>
+</div>
+{{/each}}
+

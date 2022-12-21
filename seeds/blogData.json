@@ -1,10 +1,12 @@
 [
     {
       "title": "Why MVC is so important",
-      "content": "MVC allows developers to maintain a true separation of concerns."
+      "content": "MVC allows developers to maintain a true separation of concerns.",
+      "userId": 3
     },
     {
       "title": "Authentication vs. Authorization",
-      "content": "Authentication means confirming your own identity, whereas authorization means being allowed access to the system."
+      "content": "Authentication means confirming your own identity, whereas authorization means being allowed access to the system.",
+      "userId": 1
     }
   ]

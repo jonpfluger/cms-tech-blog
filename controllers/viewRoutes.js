@@ -6,9 +6,10 @@ const withAuth = require('../utils/auth')
 router.get('/', async (req, res) => {
     try {
         let blogs = await Blog.findAll({
-            include: User
+            include: [User]
         })
         blogs = blogs.map(blog => blog.get({plain: true}))
+        console.log(blogs)
         res.render('homepage', {
             blogs,
             logged_in: req.session.logged_in
@@ -32,12 +33,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
     try {
         let blogs = await Blog.findAll({
             where: {
-                user_id: req.session.user_id
+                userId: req.session.userId
             },
             include: User
         })
+        console.log(req.session.userId)
         blogs = blogs.map(blog => blog.get({plain: true}))
-        
+        console.log(blogs)
         res.render('dashboard', {
             blogs,
             url: req.originalUrl,
@@ -53,11 +55,11 @@ router.get('/create', withAuth, async (req, res) => {
     try {
         let user = await User.findOne({
             where: {
-                id: req.session.user_id
+                id: req.session.userId
             }
         })
         user = user.get({plain: true})
-        res.render('createPost', {
+        res.render('newPost', {
             user,
             url: req.originalUrl,
             logged_in: req.session.logged_in

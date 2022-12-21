@@ -14,13 +14,15 @@ const newPostHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/')
+        document.location.replace('/dashboard')
       } else {
         alert('Failed to create post');
       }
     }
 };
 
+// add userId to the newPostHandler
+
 document
-  .querySelector('#createPost')
+  .querySelector('.post-form')
   .addEventListener('submit', newPostHandler);
