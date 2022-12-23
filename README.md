@@ -10,5 +10,6 @@ Writing about tech can be just as important as making it. Developers spend plent
 
 ![A blog website with a light background, a dark navbar, and blue and green colored posts.](public/assets/screenshot.PNG)
 
-## Links
+## Link
 
+https://jons-cms-tech-blog.herokuapp.com/
