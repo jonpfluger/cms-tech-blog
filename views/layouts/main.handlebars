@@ -22,11 +22,10 @@
             <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
 
-          {{#if logged_in}}
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
-            </li>
-          {{/if}}
+          
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
+          </li>
 
           {{#if logged_in}}
             <li class="nav-item">
@@ -47,8 +46,13 @@
   </nav>
 
   <main class="container">
-  {{{body}}}
+    {{{body}}}
   </main>
+
+  <footer class="m-5 text-center text-primary">
+    © 12/22/2022 Jon Pfluger
+  </footer>
+
   {{#if logged_in}}
     <script src="/js/logout.js"></script>
   {{/if}}

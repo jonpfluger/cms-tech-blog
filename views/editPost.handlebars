@@ -1,19 +1,19 @@
-<div class="card mt-5">
+<div class="card mt-5" id="editPost">
     <div class="card-header bg-dark text-light">
         <h2>Edit Post</h2>
     </div>
     <div class="card-body bg-success">
-        <form class="form post-form">
+        <form class="form post-form" data-blogid="{{blog.id}}">
             <div class="form-group">
-                <label for="reviewTitle" class="form-label">Post Title</label>
-                <input class="form-control" type="text" id="reviewTitle" name="reviewTitle"/>
+                <label for="title" class="form-label">Post Title</label>
+                <input class="form-control" type="text" id="title" name="title" value="{{blog.title}}"/>
             </div>
             <div class="form-group">
-                <label for="body" class="form-label">Content</label>
-                <textarea id="body" type="text" class="form-control" name="body"></textarea>
+                <label for="content" class="form-label">Content</label>
+                <textarea id="content" type="text" class="form-control" name="content">{{blog.content}}</textarea>
             </div>
             <div>
-                <button type="submit" id="editPost" class="btn btn-warning m-2">Submit</button>
+                <button type="submit" class="btn btn-warning m-2">Submit</button>
             </div>
         </form>
     </div>
